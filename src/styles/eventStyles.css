@@ -466,3 +466,11 @@ font-size: 3rem;
 .voltage-button.animate-on-scroll .dots {
   opacity: 1 !important;
 }
+/* Custom styles for the EventContainer page */
+.event-buttons-container .voltage-button svg path.line-1 {
+    stroke: #ff69b4; /* Pink */
+}
+
+.event-buttons-container .voltage-button svg path.line-2 {
+    stroke: #8a2be2; /* Purple */
+}

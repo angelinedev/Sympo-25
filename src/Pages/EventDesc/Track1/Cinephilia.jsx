@@ -2,8 +2,9 @@ import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import VanillaTilt from "vanilla-tilt";
 import "../../../styles/eventStyles.css";
-import EventImage from "../../../assets/symposium/Sympo'25/Track1/Cinephilia.png";
-  const cardVariants = {
+import EventImage from "../../../assets/symposium/Sympo'25/Track1/Cinephilia.jpg";
+
+const cardVariants = {
   hidden: { opacity: 0, y: 40 },
   visible: i => ({
     opacity: 1,
@@ -29,120 +30,83 @@ const Cinephilia = () => {
 
   const sectionCards = [
     {
+      icon: "📜",
+      heading: "Description",
+      content: (
+        <p className="text-base md:text-lg leading-relaxed">
+          This symposium goes beyond the technical aspects of filmmaking to explore the human side of cinema. We will dive into how films shape our understanding of culture, society, and ourselves through a series of presentations and discussions.
+        </p>
+      ),
+      key: "description"
+    },
+    {
       icon: "🎯",
       heading: "Objective",
       content: (
         <p className="text-base md:text-lg leading-relaxed">
-          The objective of <span className="font-bold gradient-text">CINEPHILIA</span> is to celebrate the art of cinema by testing participants' <span className="highlight bg-accent px-2 py-1 rounded-md">movie knowledge</span>, <span className="highlight bg-accent px-2 py-1 rounded-md">observation skills</span>, memory, and quick thinking through fun and interactive rounds. From decoding BGMs and dialogues to identifying movies through visual clues, the event engages participants in an entertaining yet competitive atmosphere that fosters <span className="text-primary font-semibold">teamwork, creativity, and passion for films</span>.
+          The main goal of this cinephilia event is to deepen the audience’s connection to film as an art form. It’s about fostering a culture of informed and passionate appreciation that’s more than just simple entertainment.
         </p>
       ),
       key: "objective"
     },
     {
       icon: "📋",
-      heading: "General Rules",
+      heading: "Event Rounds",
       content: (
-        <ul className="list-none space-y-2 text-base md:text-lg">
-          {[
-            "Each team can consist of 2 members 👥",
-            "Winners will be selected according to their points 🏆", 
-            "Mobiles are strictly prohibited 🚫",
-            "Use of ChatGPT & other AI tools will lead to disqualification ⚠"
-          ].map((rule, index) => (
-            <li key={index} className="flex items-start gap-3">
-              <span className="text-accent font-bold">✦</span>
-              <span>{rule}</span>
-            </li>
-          ))}
+        <ul className="list-none space-y-4 text-base md:text-lg">
+          <li className="flex flex-col items-start gap-2 p-4 bg-gradient-to-r from-purple-900/30 to-pink-900/30 rounded-lg border-l-4 border-purple-400">
+            <div className="flex items-center gap-2 font-bold text-lg md:text-xl">
+              <span className="text-purple-400">🎵</span> Round 1: BGM Master
+            </div>
+            <ul className="list-disc list-inside space-y-1 ml-4">
+              <li>Participants must guess the song title from a 10-second BGM clip.</li>
+              <li>The teams with the highest scores will be shortlisted for the next round.</li>
+            </ul>
+          </li>
+          <li className="flex flex-col items-start gap-2 p-4 bg-gradient-to-r from-blue-900/30 to-cyan-900/30 rounded-lg border-l-4 border-blue-400">
+            <div className="flex items-center gap-2 font-bold text-lg md:text-xl">
+              <span className="text-blue-400">🔕</span> Round 2: Mute-a-logue
+            </div>
+            <ul className="list-disc list-inside space-y-1 ml-4">
+              <li>Teams need to identify a muted dialogue from a film clip within 30 seconds.</li>
+              <li>The top teams from this round will qualify for the final round.</li>
+            </ul>
+          </li>
+          <li className="flex flex-col items-start gap-2 p-4 bg-gradient-to-r from-green-900/30 to-teal-900/30 rounded-lg border-l-4 border-green-400">
+            <div className="flex items-center gap-2 font-bold text-lg md:text-xl">
+              <span className="text-green-400">🎭</span> Round 3: Concept Pudi Prize Adi
+            </div>
+            <ul className="list-disc list-inside space-y-1 ml-4">
+              <li>Participants are required to identify a movie title by observing a series of images.</li>
+              <li>The team with the highest score in this round will be selected as the winner.</li>
+            </ul>
+          </li>
+        </ul>
+      ),
+      key: "rounds"
+    },
+    {
+      icon: "📜",
+      heading: "Rules and Regulations",
+      content: (
+        <ul className="list-disc list-inside space-y-2 text-base md:text-lg ml-4">
+          <li><strong>Team Size:</strong> Each team can have two members.</li>
+          <li><strong>Winner Selection:</strong> Winners are chosen based on the points they earn.</li>
+          <li><strong>Prohibited:</strong> Mobile phones and the use of ChatGPT or other AI tools are strictly forbidden and will lead to disqualification.</li>
         </ul>
       ),
       key: "rules"
     },
     {
-      icon: "🎵",
-      heading: "Round 1: BGM MASTER",
+      icon: "⚖️",
+      heading: "Judging Criteria",
       content: (
-        <div className="p-4 bg-gradient-to-r from-purple-900/30 to-pink-900/30 rounded-lg border-l-4 border-purple-400">
-          <ul className="list-none space-y-3 text-base md:text-lg">
-            <li className="flex items-start gap-3">
-              <span className="text-purple-400 font-bold text-xl">♪</span>
-              <span>Guess the name of the song that the BGM belongs to 🎶</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-purple-400 font-bold text-xl">⏰</span>
-              <span>BGM will be played for 10 seconds. Answer within the time limit</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-purple-400 font-bold text-xl">📈</span>
-              <span>Top teams will be shortlisted. Lowest scores will be eliminated</span>
-            </li>
-          </ul>
-        </div>
-      ),
-      key: "round1"
-    },
-    {
-      icon: "🔕",
-      heading: "Round 2: MUTE-A-LOGUE",
-      content: (
-        <div className="p-4 bg-gradient-to-r from-blue-900/30 to-cyan-900/30 rounded-lg border-l-4 border-blue-400">
-          <ul className="list-none space-y-3 text-base md:text-lg">
-            <li className="flex items-start gap-3">
-              <span className="text-blue-400 font-bold text-xl">🎬</span>
-              <span>Find the exact dialogue muted in the clip</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-blue-400 font-bold text-xl">⏰</span>
-              <span>Time limit: 30 seconds</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-blue-400 font-bold text-xl">🏆</span>
-              <span>Top teams will qualify for the final round</span>
-            </li>
-          </ul>
-        </div>
-      ),
-      key: "round2"
-    },
-    {
-      icon: "🎭",
-      heading: "Round 3: CONCEPT PUDI PRIZE ADI",
-      content: (
-        <div className="p-4 bg-gradient-to-r from-green-900/30 to-teal-900/30 rounded-lg border-l-4 border-green-400">
-          <ul className="list-none space-y-3 text-base md:text-lg">
-            <li className="flex items-start gap-3">
-              <span className="text-green-400 font-bold text-xl">🖼️</span>
-              <span>Find the movie name by observing the shown images</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-green-400 font-bold text-xl">⏰</span>
-              <span>Answer within the allotted time</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-green-400 font-bold text-xl">🏆</span>
-              <span>The top team will be declared the Winner</span>
-            </li>
-          </ul>
-        </div>
-      ),
-      key: "round3"
-    },
-    {
-      icon: "📝",
-      heading: "Final Remarks",
-      content: (
-        <ul className="list-none space-y-2 text-base md:text-lg">
-          <li className="flex items-start gap-3">
-            <span className="text-yellow-400 font-bold">⚡</span>
-            <span>Organizers reserve the right to modify or cancel the event</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-yellow-400 font-bold">✅</span>
-            <span>Participation implies agreement with the rules and guidelines</span>
-          </li>
+        <ul className="list-disc list-inside space-y-2 text-base md:text-lg ml-4">
+          <li><strong>Organizers’ Decision:</strong> The event organizers have the right to modify or cancel the event at any time.</li>
+          <li><strong>Participant Agreement:</strong> By participating, teams agree to follow the rules and guidelines provided.</li>
         </ul>
       ),
-      key: "remarks"
+      key: "judging"
     },
     {
       icon: "📞",
@@ -165,10 +129,6 @@ const Cinephilia = () => {
               <span className="w-2 h-2 bg-green-400 rounded-full"></span>
               <span>T.S. Antony Sebastin: </span>
               <a href="tel:+918667654649" className="text-accent hover:underline">8667654649</a>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 bg-green-400 rounded-full"></span>
-              <span>K. Naveen Kumar</span>
             </div>
           </div>
         </div>
@@ -210,7 +170,7 @@ const Cinephilia = () => {
 
       <div className="lg:w-4/6 w-full flex flex-col gap-6 overflow-auto custom-scrollbar pb-3" style={{ maxHeight: "calc(100vh - 60px)" }}>
         <motion.div
-          initial={{ opacity: 0, y: -30 }} 
+          initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           className="text-center lg:text-left"
