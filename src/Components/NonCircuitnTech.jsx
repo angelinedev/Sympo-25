@@ -4,7 +4,7 @@ import Card from "./Card";
 import Image from "../utils/Img/TechLogo.jpg";
 import bgmi from "../assets/symposium/Old/BGMI_FINAL.jpg";
 import ff from "../assets/symposium/Old/NewFreeFire.jpg";
-import cini from "../assets/symposium/Sympo'25/Track1/Cinephilia.png";
+import cini from "../assets/symposium/Sympo'25/Track1/Cinephilia.jpg";
 import GIGZUP from "../assets/symposium/Sympo'25/Track1/GIGZUP.jpg";
 import CUEBATTLE from "../assets/symposium/Sympo'25/Track1/CUEBATTLE.png"
 import dEADLYDEEDS from "../assets/symposium/Sympo'25/Track2/dEADLYDEEDS.jpeg"
