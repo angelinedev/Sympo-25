@@ -30,124 +30,80 @@ const EscapeRoom = () => {
 
   const sectionCards = [
     {
-      icon: "🎯",
-      heading: "Objective",
+      icon: "📜",
+      heading: "Event Description",
       content: (
         <p className="text-base md:text-lg leading-relaxed">
-          <span className="font-bold gradient-text">Escape Room 2.0</span> challenges participants' <span className="highlight bg-accent px-2 py-1 rounded-md">technical knowledge</span>, <span className="highlight bg-accent px-2 py-1 rounded-md">decoding skills</span>, logical reasoning, and problem-solving abilities through a two-stage competition. The event tests quick thinking with technical MCQs and analytical ability in an immersive escape room challenge, where participants must decode puzzles, analyze clues, and apply technical knowledge under pressure. This fosters <span className="text-primary font-semibold">creativity, critical thinking, and decision-making</span> in a fun yet competitive environment.
+          Escape Room 2.O is designed to challenge participants’ technical knowledge, decoding skills, logical reasoning, and problem-solving abilities through a two-stage competition. The event is designed to test quick thinking with technical MCQs and analytical ability in an immersive escape room challenge, where participants must decode puzzles, analyze clues, and apply technical knowledge under pressure. This fosters creativity, critical thinking, and decision-making in a fun yet competitive environment.
+        </p>
+      ),
+      key: "description"
+    },
+    {
+      icon: "🎯",
+      heading: "Event Objective",
+      content: (
+        <p className="text-base md:text-lg leading-relaxed">
+          Test your technical skills and problem-solving power in this two-stage challenge! Start with rapid-fire MCQs, then enter an immersive escape room where logic, clues, and teamwork are your keys to victory. Decode, analyse, and beat the clock — only the sharpest minds will make it out!
         </p>
       ),
       key: "objective"
     },
     {
       icon: "📋",
-      heading: "General Rules",
+      heading: "Event Rounds",
       content: (
-        <ul className="list-none space-y-2 text-base md:text-lg">
-          {[
-            "Each participant must register individually and participate solo 👤",
-            "Be respectful and courteous towards other participants, judges, and staff 🙏", 
-            "The decision of the judges will be final and binding 🏆"
-          ].map((rule, index) => (
-            <li key={index} className="flex items-start gap-3">
-              <span className="text-accent font-bold">✦</span>
-              <span>{rule}</span>
-            </li>
-          ))}
+        <ul className="list-none space-y-4 text-base md:text-lg">
+          <li className="flex flex-col items-start gap-2 p-4 bg-gradient-to-r from-blue-900/30 to-cyan-900/30 rounded-lg border-l-4 border-blue-400">
+            <div className="flex items-center gap-2 font-bold text-lg md:text-xl">
+              <span className="text-blue-400">📚</span> Round 1: Technical MCQ Round
+            </div>
+            <ul className="list-disc list-inside space-y-1 ml-4">
+              <li>Format: The round will consist of multiple-choice questions on technical topics.</li>
+              <li>Shortlisting: Top participants will be shortlisted based on their scores.</li>
+            </ul>
+          </li>
+          <li className="flex flex-col items-start gap-2 p-4 bg-gradient-to-r from-purple-900/30 to-pink-900/30 rounded-lg border-l-4 border-purple-400">
+            <div className="flex items-center gap-2 font-bold text-lg md:text-xl">
+              <span className="text-purple-400">🔓</span> Round 2: Escape Room Challenge
+            </div>
+            <ul className="list-disc list-inside space-y-1 ml-4">
+              <li>Objective: Participants will be required to solve puzzles and challenges in the escape room to escape within the given time limit.</li>
+              <li>Winning Criteria: The participant who escapes the room in the shortest time or solves the highest number of puzzles will be considered the winner.</li>
+            </ul>
+          </li>
+        </ul>
+      ),
+      key: "rounds"
+    },
+    {
+      icon: "📜",
+      heading: "Rules and Regulations",
+      content: (
+        <ul className="list-disc list-inside space-y-2 text-base md:text-lg ml-4">
+          <li><strong>Participation:</strong> Each participant must register individually and participate solo.</li>
+          <li><strong>Conduct:</strong> Participants must be respectful and courteous towards other participants, judges, and event staff.</li>
+          <li><strong>Decision of Judges:</strong> The decision of the judges will be final and binding.</li>
+          <li><strong>No AI:</strong> No use of artificial intelligence or automated tools.</li>
+          <li><strong>No Collaboration:</strong> Participants must work individually and not collaborate with others.</li>
+          <li><strong>No Damage:</strong> Participants must not damage or attempt to damage the escape room or its contents.</li>
+          <li><strong>Disqualification:</strong> Participants found guilty of misconduct will be disqualified.</li>
+          <li><strong>Penalties:</strong> Possible penalties include time penalties or other consequences.</li>
         </ul>
       ),
       key: "rules"
     },
     {
-      icon: "🤔",
-      heading: "Round 1: Technical MCQ Round",
+      icon: "⚖️",
+      heading: "Judging Criteria",
       content: (
-        <div className="p-4 bg-gradient-to-r from-blue-900/30 to-cyan-900/30 rounded-lg border-l-4 border-blue-400">
-          <ul className="list-none space-y-3 text-base md:text-lg">
-            <li className="flex items-start gap-3">
-              <span className="text-blue-400 font-bold text-xl">📚</span>
-              <span>Format: Multiple-choice questions on technical topics</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-blue-400 font-bold text-xl">📈</span>
-              <span>Top participants will be shortlisted based on scores</span>
-            </li>
-          </ul>
-        </div>
-      ),
-      key: "round1"
-    },
-    {
-      icon: "🔓",
-      heading: "Round 2: Escape Room Challenge",
-      content: (
-        <div className="p-4 bg-gradient-to-r from-purple-900/30 to-pink-900/30 rounded-lg border-l-4 border-purple-400">
-          <ul className="list-none space-y-3 text-base md:text-lg">
-            <li className="flex items-start gap-3">
-              <span className="text-purple-400 font-bold text-xl">🕰</span>
-              <span><strong>Objective:</strong> Solve puzzles and challenges within the escape room to escape in the given time limit</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-purple-400 font-bold text-xl">🏆</span>
-              <span><strong>Winning Criteria:</strong> The participant who escapes fastest or solves the most puzzles wins</span>
-            </li>
-          </ul>
-        </div>
-      ),
-      key: "round2"
-    },
-    {
-      icon: "🚨",
-      heading: "Important Guidelines",
-      content: (
-        <ul className="list-none space-y-2 text-base md:text-lg">
-          {[
-            "No use of AI or automated tools 🤖",
-            "No collaboration – participants must work individually 🙅", 
-            "No damage to the escape room or its contents 🚫"
-          ].map((rule, index) => (
-            <li key={index} className="flex items-start gap-3">
-              <span className="text-red-400 font-bold">⚠</span>
-              <span>{rule}</span>
-            </li>
-          ))}
+        <ul className="list-disc list-inside space-y-2 text-base md:text-lg ml-4">
+          <li>Winners will be selected depending upon the number of challenges solved in the shortest period of time.</li>
+          <li>The decision of the judges will be final.</li>
+          <li>If found guilty of any malpractice, the team will be immediately disqualified, and will not be considered for judging.</li>
         </ul>
       ),
-      key: "guidelines"
-    },
-    {
-      icon: "⚠",
-      heading: "Consequences of Misconduct",
-      content: (
-        <div className="space-y-3">
-          <div className="p-3 bg-red-900/20 rounded-lg border border-red-500/30">
-            <span className="font-semibold text-red-400">🚫</span> 
-            <span className="ml-2">Disqualification for misconduct</span>
-          </div>
-          <div className="p-3 bg-orange-900/20 rounded-lg border border-orange-500/30">
-            <span className="font-semibold text-orange-400">⏱</span> 
-            <span className="ml-2">Penalties may include time penalties or other consequences</span>
-          </div>
-        </div>
-      ),
-      key: "misconduct"
-    },
-    {
-      icon: "📝",
-      heading: "Final Remarks",
-      content: (
-        <ul className="list-none space-y-2 text-base md:text-lg">
-          <li className="flex items-start gap-3">
-            <span className="text-yellow-400 font-bold">⚡</span>
-            <span>Organizers reserve the right to modify or cancel the event</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-yellow-400 font-bold">✅</span>
-            <span>Participation implies agreement with the rules and guidelines</span>
-          </li>
-        </ul>
-      ),
-      key: "remarks"
+      key: "judging"
     },
     {
       icon: "📞",
@@ -216,7 +172,7 @@ const EscapeRoom = () => {
 
       <div className="lg:w-4/6 w-full flex flex-col gap-6 overflow-auto custom-scrollbar pb-3" style={{ maxHeight: "calc(100vh - 60px)" }}>
         <motion.div
-          initial={{ opacity: 0, y: -30 }} 
+          initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           className="text-center lg:text-left"

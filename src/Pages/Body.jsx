@@ -56,9 +56,10 @@ const Body = () => {
           <div className="flex flex-wrap justify-center gap-5 my-1 animate__animated animate__fadeInUp duration-500">
 <VoltageButton
   label={<span style={{
-    fontFamily: 'Orbitron, Arial, sans-serif',
+    fontFamily: 'collegefont',
     fontWeight: 'bold',
-    letterSpacing: '0.07em'
+    letterSpacing: '0.07em',
+    fontSize: '25px',
   }}>Dive In</span>}
   onClick={handleUnleashClick}
 />
