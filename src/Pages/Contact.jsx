@@ -26,13 +26,13 @@ const Contact = () => {
       trackName: "TRACK II",
       coordinators: [
         {
-          name: "Aravind",
+          name: "Aravind M",
           designation: "Student Coordinator",
           phone: "+917358488294",
         //   email: "alice@example.com",
         },
        {
-          name: "Jinu Sharlin",
+          name: "Jinu Sharlin P",
           designation: "Student Coordinator",
           phone: "+919150254849",
         //   email: "jane@example.com",
